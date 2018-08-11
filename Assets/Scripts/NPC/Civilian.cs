@@ -9,6 +9,7 @@ public class Civilian : MonoBehaviour {
     public float MaxMovementTime = 3;
     public float MinWaitTime = 3;
     public float MaxWaitTime = 10;
+    public float SurvivalTime = 100f;
     public Vector2 _randomDirection;
     private Rigidbody2D _rigidBody { get; set; }
 
@@ -16,7 +17,8 @@ public class Civilian : MonoBehaviour {
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        PickDirection();
+        PickDirection();     
+        Destroy(gameObject, SurvivalTime);
     }
 
     // Update is called once per frame

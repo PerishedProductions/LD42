@@ -894,6 +894,7 @@ MonoBehaviour:
   MaxMovementTime: 2
   MinWaitTime: 3
   MaxWaitTime: 10
+  SurvivalTime: 10
   _randomDirection: {x: 0, y: 0}
 --- !u!58 &2057911874
 CircleCollider2D:
