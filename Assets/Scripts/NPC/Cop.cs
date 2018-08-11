@@ -63,14 +63,6 @@ public class Cop : Civilian {
                         return;
                     }
 
-                    if (_target == null || _target.transform == null || ( _target != null && _target.IsDieing ))
-                    {
-                        EmotionalState = NpcEmotion.Idle;
-                        State = NpcPhysicalState.Waiting;
-                        _target = null;
-                        return;
-                    }
-
                     if (Weapon.WeaponState == Weapon.WeaponStates.IsReloading || Weapon.WeaponState == Weapon.WeaponStates.IsInCoolDown)
                     {
                         if (_waitingTime < 0)
@@ -88,7 +80,15 @@ public class Cop : Civilian {
                         return;
                     }
 
-                    if(Weapon.IsTargetInRange(_target.transform.position, transform.position))
+                    if (_target == null || _target.transform == null || (_target != null && _target.IsDieing))
+                    {
+                        EmotionalState = NpcEmotion.Idle;
+                        State = NpcPhysicalState.Waiting;
+                        _target = null;
+                        return;
+                    }
+
+                    if (Weapon.IsTargetInRange(_target.transform.position, transform.position))
                     {
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
