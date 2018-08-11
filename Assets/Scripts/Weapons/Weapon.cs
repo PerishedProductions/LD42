@@ -91,8 +91,6 @@ public class Weapon : MonoBehaviour {
     {
         if(WeaponState == WeaponStates.IsReadyToShoot)
         {
-            Debug.Log("Bullet shot!");
-
             var newBullet = Instantiate(BulletPrefab, transform.position + offset, transform.rotation);
             var bulletBody = newBullet.GetComponent<Rigidbody2D>();
 

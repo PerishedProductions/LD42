@@ -59,14 +59,12 @@ public class Cop : Civilian {
                 {
                     if(Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
                     {
-                        Debug.Log("Weapon reload");
                         Weapon.Reload();
                         return;
                     }
 
                     if (_target == null || _target.transform == null || ( _target != null && _target.IsDieing ))
                     {
-                        Debug.Log("Target lost");
                         EmotionalState = NpcEmotion.Idle;
                         State = NpcPhysicalState.Waiting;
                         _target = null;
@@ -75,7 +73,6 @@ public class Cop : Civilian {
 
                     if (Weapon.WeaponState == Weapon.WeaponStates.IsReloading || Weapon.WeaponState == Weapon.WeaponStates.IsInCoolDown)
                     {
-                        Debug.Log("Weapon reloading");
                         if (_waitingTime < 0)
                         {
                             _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
@@ -93,7 +90,6 @@ public class Cop : Civilian {
 
                     if(Weapon.IsTargetInRange(_target.transform.position, transform.position))
                     {
-                        Debug.Log("Aiming");
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
 
@@ -101,7 +97,6 @@ public class Cop : Civilian {
                     }
                     else
                     {
-                        Debug.Log("Target out range");
                         //Move closer to target or chance to give up on target and move on
                         EmotionalState = NpcEmotion.Idle;
                         State = NpcPhysicalState.Waiting;
