@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour {
     public int MagazineSize = 1;
     public float Range = 5;
     public float ShootingSpeed = 0.5f;
+    public float BulletSpeed = 10;
     protected int _ammoLeft = 1;
     protected float _currentReloadtime = 0;
     protected float _cdTime = 0;
@@ -94,7 +95,7 @@ public class Weapon : MonoBehaviour {
             var newBullet = Instantiate(BulletPrefab, transform.position + offset, transform.rotation);
             var bulletBody = newBullet.GetComponent<Rigidbody2D>();
 
-            bulletBody.velocity = direction;
+            bulletBody.velocity = direction * BulletSpeed;
 
             _ammoLeft--;
 
