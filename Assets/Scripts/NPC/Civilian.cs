@@ -155,6 +155,11 @@ public class Civilian : MonoBehaviour {
         }
     }
 
+    public virtual void TargetedBy( Civilian shooter )
+    {
+
+    }
+
 
     protected virtual void Hide()
     {

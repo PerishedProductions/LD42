@@ -94,6 +94,8 @@ public class Cop : Civilian {
                         direction.Normalize();
 
                         Weapon.ShootAtTarget(new Vector3(direction.x * 3, direction.y * 3, direction.z * 3), direction);
+
+                        _target.TargetedBy(this);
                     }
                     else
                     {
@@ -109,6 +111,17 @@ public class Cop : Civilian {
                 break;
             default:
                 break;
+        }
+    }
+
+    public override void TargetedBy(Civilian shooter)
+    {
+        if(_target == null || _target != shooter)
+        {
+            _target = shooter;
+
+            EmotionalState = NpcEmotion.Aggresive;
+            State = NpcPhysicalState.Attacking;
         }
     }
 }
