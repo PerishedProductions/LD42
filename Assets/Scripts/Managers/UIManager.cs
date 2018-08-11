@@ -12,10 +12,13 @@ public class UIManager : MonoBehaviour {
     public TextMeshProUGUI respawnText;
     public GameObject deadPanel;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public RectTransform hpMask;
+    float hpMaskLengthPercent;
+
+    // Use this for initialization
+    void Start () {
+        hpMaskLengthPercent = hpMask.sizeDelta.x / 100;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,6 +35,15 @@ public class UIManager : MonoBehaviour {
         else
         {
             deadPanel.SetActive(false);
+        }
+
+        if (GameManager.instance.playerController.health >= 0)
+        {
+            hpMask.sizeDelta = new Vector2(hpMaskLengthPercent * GameManager.instance.playerController.health, hpMask.sizeDelta.y);
+        }
+        else
+        {
+            hpMask.sizeDelta = new Vector2(0, hpMask.sizeDelta.y);
         }
 
 	}

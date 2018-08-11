@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public int movementSpeed = 500;
     public float attackTime = 1;
 
+    public int health = 100;
+
     public Collider2D hitbox;
     public Vector2[] hitboxPos;
 

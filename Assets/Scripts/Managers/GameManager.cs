@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public Transform playerSpawn;
 
     public GameObject player;
+    public PlayerController playerController;
+
     public float playerCooldown = 5;
     public float currentPlayerCooldown;
     public bool playerDead = false;
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour {
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour {
             {
                 player.SetActive(true);
                 playerDead = false;
+                playerController.health = 100;
                 currentPlayerCooldown = 0;
                 player.transform.position = playerSpawn.position;
             }
@@ -67,6 +71,11 @@ public class GameManager : MonoBehaviour {
         }
 
         amountOfGhosts = GetComponents<Ghost>().Length;
+
+        if (playerController.health <= 0)
+        {
+            PlayerReset();
+        }
 
 	}
 
@@ -87,6 +96,14 @@ public class GameManager : MonoBehaviour {
     {
         player.SetActive(false);
         playerDead = true;
+    }
+
+    public void HurtPlayer()
+    {
+        int hurtPercent = UnityEngine.Random.Range(0, 50);
+
+        playerController.health -= hurtPercent;
+
     }
 
 }

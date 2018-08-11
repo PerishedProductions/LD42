@@ -54,4 +54,12 @@ public class Ghost : Enemy {
         base.Aggressive();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameManager.instance.HurtPlayer();
+        }
+    }
+
 }
