@@ -33,6 +33,24 @@ public class PlayerController : MonoBehaviour {
             canAttack = false;
         }
 
+        if (movement.x < 0)
+        {
+            hitbox.offset = hitboxPos[0];
+        }
+        else if (movement.x > 0)
+        {
+            hitbox.offset = hitboxPos[1];
+        }
+
+        if (movement.y < 0)
+        {
+            hitbox.offset = hitboxPos[3];
+        }
+        else if (movement.y > 0)
+        {
+            hitbox.offset = hitboxPos[2];
+        }
+
         if (attack)
         {
 
@@ -45,24 +63,6 @@ public class PlayerController : MonoBehaviour {
                 canAttack = true;
                 attack = false;
                 currAttackTime = 0;
-            }
-
-            if (movement.x < 0)
-            {
-                hitbox.offset = hitboxPos[0];
-            }
-            else if (movement.x > 0)
-            {
-                hitbox.offset = hitboxPos[1];
-            }
-
-            if (movement.y < 0)
-            {
-                hitbox.offset = hitboxPos[3];
-            }
-            else if (movement.y > 0)
-            {
-                hitbox.offset = hitboxPos[2];
             }
         }
         else
@@ -83,6 +83,17 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        Debug.Log("Collided with: " + collision.gameObject.name);
+        Debug.Log("This collider gameobject: " + collision.GetComponent<Collider2D>().gameObject.name);
+
+
+        if (collision.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+
+
         canAttack = true;
         attack = false;
     }
