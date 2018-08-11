@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour {
         {
             civilian.IsDieing = true;
         }
+        else if (collision.tag == "Player")
+        {
+            GameManager.instance.PlayerReset();
+        }
 
         Destroy(gameObject);
     }

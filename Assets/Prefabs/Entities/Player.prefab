@@ -39,10 +39,9 @@ GameObject:
   - component: {fileID: 50250121414990188}
   - component: {fileID: 114155771933506454}
   - component: {fileID: 61276260635151146}
-  - component: {fileID: 95317609162540124}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4864362853878116}
   - component: {fileID: 212448384400418396}
+  - component: {fileID: 95019868459014858}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000055491924, y: -0.4868579}
+  m_Offset: {x: -0.009924233, y: -0.39211804}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,15 +192,15 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72797155, y: 0.48751783}
+  m_Size: {x: 0.39243454, y: 0.36909306}
   m_EdgeRadius: 0
---- !u!95 &95317609162540124
+--- !u!95 &95019868459014858
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1610438160898122}
+  m_GameObject: {fileID: 1639726819928768}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d22528fb970f7a848ac81f71f9640b7b, type: 2}

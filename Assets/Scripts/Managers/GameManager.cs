@@ -10,6 +10,12 @@ public class GameManager : MonoBehaviour {
     public int souls = 0;
     public float timeLeft;
     public float timeLimit = 100;
+    public Transform playerSpawn;
+
+    public GameObject player;
+    public float playerCooldown = 5;
+    public float currentPlayerCooldown;
+    public bool playerDead = false;
 
     private void Awake()
     {
@@ -25,7 +31,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         timeLeft = timeLimit;
+        currentPlayerCooldown = playerCooldown;
 
+    }
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -33,9 +45,23 @@ public class GameManager : MonoBehaviour {
 
         timeLeft -= Time.deltaTime;
 
-        if (timeLeft >= timeLimit)
+        if (timeLeft <= 0)
         {
             Debug.Log("Times up");            
+        }
+
+        if (playerDead)
+        {
+            currentPlayerCooldown -= Time.deltaTime;
+
+            if (currentPlayerCooldown <= 0)
+            {
+                player.SetActive(true);
+                playerDead = false;
+                currentPlayerCooldown = 0;
+                player.transform.position = playerSpawn.position;
+            }
+
         }
 
 	}
@@ -51,6 +77,12 @@ public class GameManager : MonoBehaviour {
 
         return string.Format("{0}:{1:00}",(int)time.TotalMinutes, time.Seconds);
 
+    }
+
+    public void PlayerReset()
+    {
+        player.SetActive(false);
+        playerDead = true;
     }
 
 }
