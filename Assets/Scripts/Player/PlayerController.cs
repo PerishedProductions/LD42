@@ -95,10 +95,6 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log("Collided with: " + collision.gameObject.name);
-        Debug.Log("This collider gameobject: " + collision.GetComponent<Collider2D>().gameObject.name);
-
-
         if (collision.tag == "Enemy")
         {
             GameManager.instance.AddSoul();

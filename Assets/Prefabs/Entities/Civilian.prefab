@@ -131,12 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8a021963da31448177eec1cfbe3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDieing: 0
   MovementSpeed: 250
   MinMovementTime: 1
   MaxMovementTime: 2
   MinWaitTime: 3
   MaxWaitTime: 10
-  _randomDirection: {x: 0, y: 0}
+  DeathTimer: 100
+  EmotionalState: 0
+  State: 0
+  soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
 --- !u!212 &212721263635356002
 SpriteRenderer:
   m_ObjectHideFlags: 1

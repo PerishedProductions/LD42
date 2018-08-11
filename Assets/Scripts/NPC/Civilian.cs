@@ -34,6 +34,7 @@ public class Civilian : MonoBehaviour {
     public float DeathTimer = 100f;
     public NpcEmotion EmotionalState = NpcEmotion.Idle;
     public NpcPhysicalState State = NpcPhysicalState.Waiting;
+    public GameObject soulPrefab;
 
     private Vector2 _moveDirection;
     protected Rigidbody2D _rigidBody { get; set; }
@@ -58,6 +59,7 @@ public class Civilian : MonoBehaviour {
         {
             case NpcEmotion.Death:
                 {
+                    Instantiate(soulPrefab, transform.position, transform.rotation);
                     Destroy(gameObject);
                     break;
                 }
