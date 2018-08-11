@@ -18,7 +18,8 @@ public class Civilian : MonoBehaviour {
         Waiting,
         Moving,
         Attacking,
-        Defending
+        Defending,
+        Targeting
     }
 
     public bool IsDieing = false;
@@ -35,10 +36,10 @@ public class Civilian : MonoBehaviour {
     public NpcPhysicalState State = NpcPhysicalState.Waiting;
 
     private Vector2 _moveDirection;
-    private Rigidbody2D _rigidBody { get; set; }
+    protected Rigidbody2D _rigidBody { get; set; }
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -62,6 +63,7 @@ public class Civilian : MonoBehaviour {
                 }
             case NpcEmotion.Aggresive:
                 {
+                    Attack();
                     break;
                 }
             case NpcEmotion.Fear:
