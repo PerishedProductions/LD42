@@ -6,6 +6,11 @@ public class Cop : Civilian {
 
     protected Civilian _target;
 
+    public GameObject BulletPrefab;
+    public float ReloadTime;
+
+    private float _currentReloadTime;
+
     protected override void Start()
     {
         base.Start();
@@ -32,7 +37,7 @@ public class Cop : Civilian {
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
-                    if(_target != null)
+                    if(_target != null && _target != this)
                     {
                         State = NpcPhysicalState.Attacking;
                     }
@@ -41,13 +46,35 @@ public class Cop : Civilian {
                 }
             case NpcPhysicalState.Attacking:
                 {
-                    if (_target != null)
+                    if (_waitingTime < 0)
                     {
-                        _target.IsDieing = true;
+                        _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
                     }
 
-                    EmotionalState = NpcEmotion.Idle;
-                    State = NpcPhysicalState.Waiting;
+                    _waitedFor += Time.deltaTime;
+
+                    if (_waitedFor > _waitingTime)
+                    {
+                        if (_target != null && _target.IsDieing)
+                        {
+                            EmotionalState = NpcEmotion.Idle;
+                            State = NpcPhysicalState.Waiting;
+                        }
+
+                        var direction = _target.transform.position - transform.position;
+                        direction.Normalize();
+
+                        direction = new Vector3(direction.x * 3, direction.y * 3, direction.z * 3);
+
+                        var newBullet = Instantiate(BulletPrefab, transform.position + direction, transform.rotation);
+                        var bulletBody = newBullet.GetComponent<Rigidbody2D>();
+
+
+                        bulletBody.velocity = direction;
+                        _waitedFor = 0;
+                        _waitingTime = -1;
+                    }
+
                     break;
                 }
             case NpcPhysicalState.Defending:
