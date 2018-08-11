@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour {
     {
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+
         if (movement.x != 0 || movement.y != 0)
         {
             anim.SetBool("walking", true);

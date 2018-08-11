@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: c8ecd9bd88b95cd43aa9148e06ab4612
+guid: a2e7f08a661168f4ba944f633b510bdf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GrimReaper_0
-    21300002: GrimReaper_1
-    21300004: GrimReaper_2
-    21300006: GrimReaper_3
+    21300000: GrimReaperE_0
+    21300002: GrimReaperE_1
+    21300004: GrimReaperE_2
+    21300006: GrimReaperE_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrimReaper_0
+      name: GrimReaperE_0
       rect:
         serializedVersion: 2
         x: 0
@@ -102,13 +102,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54375c264d89901488f043721e7f6832
+      spriteID: d628a616b0319c44a99b754e7beb25a6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrimReaper_1
+      name: GrimReaperE_1
       rect:
         serializedVersion: 2
         x: 128
@@ -122,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba00f3175d8ea014ea1c249a0368e233
+      spriteID: fb03546fd83b31541aa737c4571e0a30
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrimReaper_2
+      name: GrimReaperE_2
       rect:
         serializedVersion: 2
         x: 256
@@ -142,13 +142,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9dde1573a3ca3844683e66d258cecd9c
+      spriteID: 585e31a0532fe954392d4b0f4912744a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrimReaper_3
+      name: GrimReaperE_3
       rect:
         serializedVersion: 2
         x: 384
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae4204900c083d443b2391a3b4053c09
+      spriteID: 7cdb1ec0318e2e049aceaed3167be4f9
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e40f401e9faea7a4eb653266ad2742f8
+    spriteID: 8bb2f10764d86834e805275132a18ee1
     vertices: []
     indices: 
     edges: []
