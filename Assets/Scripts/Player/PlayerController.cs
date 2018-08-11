@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public Vector2[] hitboxPos;
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     private bool attack = false;
     private bool canAttack = true;
@@ -20,12 +21,22 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
 
 	}
 
     private void Update()
     {
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (movement.x != 0 || movement.y != 0)
+        {
+            anim.SetBool("walking", true);
+        }
+        else
+        {
+            anim.SetBool("walking", false);
+        }
 
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
@@ -90,6 +101,7 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.tag == "Enemy")
         {
+            GameManager.instance.AddSoul();
             Destroy(collision.gameObject);
         }
 
