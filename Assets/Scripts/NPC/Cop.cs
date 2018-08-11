@@ -93,7 +93,7 @@ public class Cop : Civilian {
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
 
-                        Weapon.ShootAtTarget(new Vector3(direction.x * 3, direction.y * 3, direction.z * 3), direction);
+                        Weapon.ShootAtTarget(new Vector3(direction.x * 2, direction.y * 2, direction.z * 2), direction);
 
                         _target.TargetedBy(this);
                     }

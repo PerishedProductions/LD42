@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 1244177072579934, guid: 042bf1c6d87253f40b0c43eff5b0d4a7,
     type: 2}
-  Reloadtime: 1
+  Reloadtime: 5
   MagazineSize: 1
   Range: 10
-  ShootingSpeed: 0.1
+  ShootingSpeed: 0.5
   WeaponState: 2

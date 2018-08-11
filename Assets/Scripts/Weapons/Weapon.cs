@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour {
     public float Reloadtime = 1f;
     public int MagazineSize = 1;
     public float Range = 5;
-    public float ShootingSpeed = 0.1f;
+    public float ShootingSpeed = 0.5f;
     protected int _ammoLeft = 1;
     protected float _currentReloadtime = 0;
     protected float _cdTime = 0;
@@ -100,7 +100,7 @@ public class Weapon : MonoBehaviour {
 
             WeaponState = WeaponStates.IsInCoolDown;
 
-            if(_ammoLeft < 0)
+            if(_ammoLeft <= 0)
             {
                 WeaponState = WeaponStates.NeedsReloading;
             }
