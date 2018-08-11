@@ -23,14 +23,14 @@ public class Civilian : MonoBehaviour {
     }
 
     public bool IsDieing = false;
-    private float _waitingTime;
-    private float _waitedFor;
+    protected float _waitingTime;
+    protected float _waitedFor;
 
     public int MovementSpeed = 250;
     public float MinMovementTime = 1;
     public float MaxMovementTime = 3;
-    public float MinWaitTime = 3;
-    public float MaxWaitTime = 10;
+    protected float MinWaitTime = 3;
+    protected float MaxWaitTime = 10;
     public float DeathTimer = 100f;
     public NpcEmotion EmotionalState = NpcEmotion.Idle;
     public NpcPhysicalState State = NpcPhysicalState.Waiting;
