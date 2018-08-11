@@ -59,6 +59,7 @@ public class Cop : Civilian {
                         {
                             EmotionalState = NpcEmotion.Idle;
                             State = NpcPhysicalState.Waiting;
+                            _target = null;
                         }
 
                         var direction = _target.transform.position - transform.position;
