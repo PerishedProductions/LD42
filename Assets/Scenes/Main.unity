@@ -203,6 +203,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114586465574786244, guid: 776b47374cadca44b8836f23919e08a0,
+        type: 2}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 114854503334880936, guid: deeac0753b5b7064a88cfbc5d4ec0420,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776b47374cadca44b8836f23919e08a0, type: 2}
   m_IsPrefabAsset: 0
@@ -1109,11 +1115,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.24
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.08
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
       propertyPath: m_LocalPosition.z

@@ -6,14 +6,25 @@ public class Cop : Civilian {
 
     protected Civilian _target;
 
-    public GameObject BulletPrefab;
+    public GameObject WeaponPrefab;
     public float ReloadTime;
 
     private float _currentReloadTime;
 
+    public Weapon Weapon;
+
     protected override void Start()
     {
+        Weapon.Start();
+
         base.Start();
+    }
+
+    protected override void FixedUpdate()
+    {
+        Weapon.Update();
+
+        base.FixedUpdate();
     }
 
     protected override void Idle()
@@ -31,7 +42,7 @@ public class Cop : Civilian {
                 break;
             case NpcPhysicalState.Targeting:
                 {
-                    var targets = Physics2D.OverlapCircleAll(_rigidBody.position, 5);
+                    var targets = Physics2D.OverlapCircleAll(_rigidBody.position, Weapon.Range);
 
                     var targetIndex = Random.Range(0, targets.Length);
 
@@ -46,34 +57,55 @@ public class Cop : Civilian {
                 }
             case NpcPhysicalState.Attacking:
                 {
-                    if (_waitingTime < 0)
+                    if(Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
                     {
-                        _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
+                        Debug.Log("Weapon reload");
+                        Weapon.Reload();
+                        return;
                     }
 
-                    _waitedFor += Time.deltaTime;
-
-                    if (_waitedFor > _waitingTime)
+                    if (_target == null || _target.transform == null || ( _target != null && _target.IsDieing ))
                     {
-                        if (_target != null && _target.IsDieing)
+                        Debug.Log("Target lost");
+                        EmotionalState = NpcEmotion.Idle;
+                        State = NpcPhysicalState.Waiting;
+                        _target = null;
+                        return;
+                    }
+
+                    if (Weapon.WeaponState == Weapon.WeaponStates.IsReloading || Weapon.WeaponState == Weapon.WeaponStates.IsInCoolDown)
+                    {
+                        Debug.Log("Weapon reloading");
+                        if (_waitingTime < 0)
                         {
-                            EmotionalState = NpcEmotion.Idle;
-                            State = NpcPhysicalState.Waiting;
-                            _target = null;
+                            _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
                         }
 
+                        _waitedFor += Time.deltaTime;
+
+                        if (_waitedFor > _waitingTime)
+                        {
+                            _waitedFor = 0;
+                            _waitingTime = -1;
+                        }
+                        return;
+                    }
+
+                    if(Weapon.IsTargetInRange(_target.transform.position, transform.position))
+                    {
+                        Debug.Log("Aiming");
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
 
-                        direction = new Vector3(direction.x * 3, direction.y * 3, direction.z * 3);
-
-                        var newBullet = Instantiate(BulletPrefab, transform.position + direction, transform.rotation);
-                        var bulletBody = newBullet.GetComponent<Rigidbody2D>();
-
-
-                        bulletBody.velocity = direction;
-                        _waitedFor = 0;
-                        _waitingTime = -1;
+                        Weapon.ShootAtTarget(new Vector3(direction.x * 3, direction.y * 3, direction.z * 3), direction);
+                    }
+                    else
+                    {
+                        Debug.Log("Target out range");
+                        //Move closer to target or chance to give up on target and move on
+                        EmotionalState = NpcEmotion.Idle;
+                        State = NpcPhysicalState.Waiting;
+                        _target = null;
                     }
 
                     break;

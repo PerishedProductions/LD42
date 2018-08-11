@@ -47,7 +47,7 @@ public class Civilian : MonoBehaviour {
 
     // Update is called once per frame
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if(IsDieing)
         {
