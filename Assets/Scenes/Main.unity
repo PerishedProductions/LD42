@@ -249,6 +249,93 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a6d4d373eda9947ab2ef344fc37b8d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &174069519
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385929509831552, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760872337375658, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+      propertyPath: m_Name
+      value: Cop
+      objectReference: {fileID: 0}
+    - target: {fileID: 212721263635356002, guid: 52b70b94e344c114a8e12c647144ef1b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.71637297
+      objectReference: {fileID: 0}
+    - target: {fileID: 212721263635356002, guid: 52b70b94e344c114a8e12c647144ef1b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.28439835
+      objectReference: {fileID: 0}
+    - target: {fileID: 212721263635356002, guid: 52b70b94e344c114a8e12c647144ef1b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &174069520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1760872337375658, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  m_PrefabInternal: {fileID: 174069519}
+--- !u!114 &174069521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 174069520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26770cb5b7b7ac74aaa971d408a0b615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDieing: 0
+  MovementSpeed: 250
+  MinMovementTime: 1
+  MaxMovementTime: 3
+  MinWaitTime: 3
+  MaxWaitTime: 10
+  DeathTimer: 100
+  EmotionalState: 1
+  State: 4
 --- !u!1001 &279453382
 Prefab:
   m_ObjectHideFlags: 0
