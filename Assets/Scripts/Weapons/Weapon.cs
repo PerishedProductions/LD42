@@ -88,11 +88,11 @@ public class Weapon : MonoBehaviour {
         WeaponState = WeaponStates.IsReloading;
     }
 
-    public virtual void ShootAtTarget(Vector3 offset, Vector3 direction)
+    public virtual void ShootAtTarget(Vector3 position, Vector3 direction)
     {
         if(WeaponState == WeaponStates.IsReadyToShoot)
         {
-            var newBullet = Instantiate(BulletPrefab, transform.position + offset, transform.rotation);
+            var newBullet = Instantiate(BulletPrefab, position, transform.rotation);
             var bulletBody = newBullet.GetComponent<Rigidbody2D>();
 
             bulletBody.velocity = direction * BulletSpeed;

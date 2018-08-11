@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cop : Civilian {
+public class Mafia : Civilian {
 
     protected Civilian _target;
     public Weapon Weapon;
@@ -42,7 +42,7 @@ public class Cop : Civilian {
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
-                    if(_target != null && _target != this)
+                    if (_target != null && _target != this)
                     {
                         State = NpcPhysicalState.Attacking;
                     }
@@ -51,7 +51,7 @@ public class Cop : Civilian {
                 }
             case NpcPhysicalState.Attacking:
                 {
-                    if(Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
+                    if (Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
                     {
                         Weapon.Reload();
                         return;
@@ -110,7 +110,7 @@ public class Cop : Civilian {
 
     public override void TargetedBy(Civilian shooter)
     {
-        if(_target == null || _target != shooter)
+        if (_target == null || _target != shooter)
         {
             _target = shooter;
 
