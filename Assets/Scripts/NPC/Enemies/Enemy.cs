@@ -9,11 +9,12 @@ public class Enemy : MonoBehaviour {
 
     public EnemyState state = EnemyState.Idle;
     public int moveSpeed = 1;
+    public int viewRange = 5;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -35,55 +36,70 @@ public class Enemy : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	public virtual void Update ()
     {
 
         switch (state)
         {
             case EnemyState.Idle:
+                Idle();
                 break;
             case EnemyState.Defensive:
-
-                var targets = Physics2D.OverlapCircleAll(rb.position, 5);
-
-                GameObject target = null;
-
-                if (targets != null)
-                {
-
-                    bool playerFound = false;
-
-                    for (int i = 0; i < targets.Length; i++)
-                    {
-                        if (targets[i].tag == "Player")
-                        {
-                            target = targets[i].gameObject;
-                            playerFound = true;
-                        }
-                        
-                    }
-
-                    if (target != null && playerFound == false)
-                    {
-                        target = null;
-                    }
-
-                }
-
-                if (target != null)
-                {
-                    var direction = target.transform.position - transform.position;
-                    rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * moveSpeed * Time.deltaTime;
-                }
-                else
-                {
-                    rb.velocity = Vector2.zero;
-                }
-
+                Defensive();
                 break;
             case EnemyState.Aggressive:
+                Aggressive();
                 break;
         }
+
+    }
+
+    public virtual void Idle()
+    {
+
+    }
+
+    public virtual void Defensive()
+    {
+        var targets = Physics2D.OverlapCircleAll(rb.position, viewRange);
+
+        GameObject target = null;
+
+        if (targets != null)
+        {
+
+            bool playerFound = false;
+
+            for (int i = 0; i < targets.Length; i++)
+            {
+                if (targets[i].tag == "Player")
+                {
+                    target = targets[i].gameObject;
+                    playerFound = true;
+                }
+
+            }
+
+            if (target != null && playerFound == false)
+            {
+                target = null;
+            }
+
+        }
+
+        if (target != null)
+        {
+            var direction = target.transform.position - transform.position;
+            rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * moveSpeed * Time.deltaTime;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    public virtual void Aggressive()
+    {
 
     }
 

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public float currentPlayerCooldown;
     public bool playerDead = false;
 
+    public int amountOfGhosts = 0;
+
     private void Awake()
     {
         if (instance == null)
@@ -63,6 +65,8 @@ public class GameManager : MonoBehaviour {
             }
 
         }
+
+        amountOfGhosts = GetComponents<Ghost>().Length;
 
 	}
 

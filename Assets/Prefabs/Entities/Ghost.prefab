@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4693600010787238}
   - component: {fileID: 58190025047604482}
   - component: {fileID: 50020880227551548}
-  - component: {fileID: 114103817107561106}
+  - component: {fileID: 114115299780084900}
   m_Layer: 0
-  m_Name: Soul
+  m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114103817107561106
+--- !u!114 &114115299780084900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,16 +115,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1808531288868614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a153145267a253f4cbbcd79dc90ce1ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 174dc437950a7d843bc0091e2e36e352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
   moveSpeed: 300
+  viewRange: 15
   rb: {fileID: 0}
-  lifeTime: 5
-  currLifeTime: 0
-  ghostPrefab: {fileID: 1808531288868614, guid: 54f094454de94314bad57d0e99227bb4,
-    type: 2}
 --- !u!212 &212700691803474368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -161,7 +158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
