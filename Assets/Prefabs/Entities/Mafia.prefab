@@ -128,6 +128,8 @@ MonoBehaviour:
   State: 0
   soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
   Weapon: {fileID: 114747927625016684, guid: f250f2f66472c0d41a6065f559006d4d, type: 2}
+  EmotionalSwingChance: 0.25
+  EmtionalSwingTimer: 5
 --- !u!114 &114777719512342430
 MonoBehaviour:
   m_ObjectHideFlags: 1

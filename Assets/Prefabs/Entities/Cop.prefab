@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696795834703914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalPosition: {x: 5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380296775560972}
@@ -124,12 +124,10 @@ MonoBehaviour:
   MinMovementTime: 1
   MaxMovementTime: 3
   DeathTimer: 5
-  EmotionalState: 1
-  State: 4
+  EmotionalState: 0
+  State: 0
   soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
-  BulletPrefab: {fileID: 1244177072579934, guid: 042bf1c6d87253f40b0c43eff5b0d4a7,
-    type: 2}
-  ReloadTime: 0
+  Weapon: {fileID: 114854503334880936, guid: deeac0753b5b7064a88cfbc5d4ec0420, type: 2}
 --- !u!114 &114999089402747062
 MonoBehaviour:
   m_ObjectHideFlags: 1

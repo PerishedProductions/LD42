@@ -36,8 +36,8 @@ public class Civilian : MonoBehaviour {
     public NpcPhysicalState State = NpcPhysicalState.Waiting;
     public GameObject soulPrefab;
 
-    private Vector2 _moveDirection;
-    protected Rigidbody2D _rigidBody { get; set; }
+    protected Vector2 _moveDirection;
+    protected Rigidbody2D _rigidBody;
 
     // Use this for initialization
     protected virtual void Start()
@@ -91,9 +91,10 @@ public class Civilian : MonoBehaviour {
         {
             case NpcPhysicalState.Waiting:
                 {
-                    if(_moveDirection != Vector2.zero)
+                    StopMoving();
+
+                    if (_moveDirection != Vector2.zero)
                     {
-                        StopMoving();
                         _moveDirection = Vector2.zero;
                         _waitedFor = 0;
                         _waitingTime = -1;
@@ -157,7 +158,7 @@ public class Civilian : MonoBehaviour {
 
     public virtual void TargetedBy( Civilian shooter )
     {
-
+        State = NpcPhysicalState.Moving;
     }
 
 
@@ -191,20 +192,21 @@ public class Civilian : MonoBehaviour {
         return RadianToVector2(degree * Mathf.Deg2Rad);
     }
 
-    private void PickRandomMovementDirection()
+    protected void PickRandomMovementDirection()
     {
         var degrees = Vector2.Angle(transform.position, new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
 
         _moveDirection = DegreeToVector2(degrees);
     }
 
-    private void MoveToDirection()
+    protected void MoveToDirection()
     {
         _rigidBody.velocity = _moveDirection * MovementSpeed * Time.deltaTime;
     }
 
-    private void StopMoving()
+    protected void StopMoving()
     {
         _rigidBody.velocity = new Vector2(0, 0);
+        _moveDirection = Vector2.zero;
     }
 }
