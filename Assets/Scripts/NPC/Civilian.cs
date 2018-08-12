@@ -22,7 +22,7 @@ public class Civilian : MonoBehaviour {
         Targeting
     }
 
-    public bool IsDieing = false;
+    public bool IsBleedingToDeath = false;
     protected float _waitingTime;
     protected float _waitedFor;
 
@@ -31,13 +31,32 @@ public class Civilian : MonoBehaviour {
     public float MaxMovementTime = 3;
     protected float MinWaitTime = 3;
     protected float MaxWaitTime = 10;
-    public float DeathTimer = 100f;
     public NpcEmotion EmotionalState = NpcEmotion.Idle;
     public NpcPhysicalState State = NpcPhysicalState.Waiting;
     public GameObject soulPrefab;
 
     protected Vector2 _moveDirection;
     protected Rigidbody2D _rigidBody;
+
+    public float Hitpoints = 100;
+
+    public virtual void DoDmg()
+    {
+        Hitpoints -= 25;
+
+        if (Hitpoints < 0) EmotionalState = NpcEmotion.Death;
+
+        var criticalPain = Random.value;
+
+        if(criticalPain < 0.2)
+        {
+            EmotionalState = NpcEmotion.Death;
+        }
+        else if(criticalPain < 0.5)
+        {
+            IsBleedingToDeath = true;
+        }
+    }
 
     // Use this for initialization
     protected virtual void Start()
@@ -49,9 +68,9 @@ public class Civilian : MonoBehaviour {
 
     protected virtual void FixedUpdate()
     {
-        if(IsDieing)
+        if(IsBleedingToDeath)
         {
-            CountDeath();
+            BleedDmg();
         }
 
 
@@ -142,11 +161,11 @@ public class Civilian : MonoBehaviour {
         }
     }
 
-    protected virtual void CountDeath()
+    protected virtual void BleedDmg()
     {
-        DeathTimer -= Time.deltaTime;
+        Hitpoints -= Time.deltaTime / 2;
 
-        if (DeathTimer < 0)
+        if (Hitpoints < 0)
         {
             EmotionalState = NpcEmotion.Death;
         }

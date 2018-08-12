@@ -100,7 +100,7 @@ public class Cop : Civilian {
                         }
                     }
 
-                    if (_target == null || _target.transform == null || (_target != null && _target.IsDieing))
+                    if (_target == null || _target.transform == null || (_target != null && _target.IsBleedingToDeath))
                     {
                         if (Random.value < ContinueMurderingChance)
                         {

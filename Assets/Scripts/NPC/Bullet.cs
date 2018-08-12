@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour {
 
         if(civilian != null)
         {
-            civilian.IsDieing = true;
+            civilian.DoDmg();
         }
         else if (collision.tag == "Player")
         {

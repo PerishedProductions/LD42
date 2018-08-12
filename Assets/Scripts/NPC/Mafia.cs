@@ -120,7 +120,7 @@ public class Mafia : Civilian {
                         }
                     }
 
-                    if (_target == null || _target.transform == null || (_target != null && _target.IsDieing))
+                    if (_target == null || _target.transform == null || (_target != null && _target.IsBleedingToDeath))
                     {
                         if(Random.value < ContinueMurderingChance)
                         {
@@ -136,7 +136,7 @@ public class Mafia : Civilian {
                         return;
                     }
 
-                    if (Weapon.IsTargetInRange(_target.transform.position, transform.position) && false)
+                    if (Weapon.IsTargetInRange(_target.transform.position, transform.position))
                     {
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
