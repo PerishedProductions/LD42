@@ -81,7 +81,7 @@ public class Mafia : Civilian {
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
-                    if (_target != null && _target != this)
+                    if (_target != null && _target != this && !(_target is Mafia))
                     {
                         _moveDirection = Vector2.zero;
                         State = NpcPhysicalState.Attacking;

@@ -63,7 +63,7 @@ public class Cop : Civilian {
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
-                    if (_target != null && _target != this)
+                    if (_target != null && _target != this && !(_target is Cop))
                     {
                         _moveDirection = Vector2.zero;
                         State = NpcPhysicalState.Attacking;
