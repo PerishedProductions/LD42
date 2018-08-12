@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4731001729921376}
   - component: {fileID: 212721263635356002}
+  - component: {fileID: 95790720586144858}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760872337375658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -1, z: 0}
+  m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4731001729921376}
@@ -68,7 +69,7 @@ Transform:
   m_GameObject: {fileID: 1255000549646346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7928996, y: 5.7928996, z: 5.7928996}
+  m_LocalScale: {x: 1, y: 1, z: 5.7928996}
   m_Children: []
   m_Father: {fileID: 4385929509831552}
   m_RootOrder: 0
@@ -108,6 +109,24 @@ CircleCollider2D:
   m_Offset: {x: 0.022785783, y: 0}
   serializedVersion: 2
   m_Radius: 0.48555148
+--- !u!95 &95790720586144858
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1255000549646346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87ac49a197cf6ca4da027ca9cb31c030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114476168183970044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,14 +150,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8a021963da31448177eec1cfbe3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDieing: 0
+  IsBleedingToDeath: 0
   MovementSpeed: 250
   MinMovementTime: 1
   MaxMovementTime: 2
-  DeathTimer: 5
   EmotionalState: 0
   State: 0
   soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
+  Hitpoints: 100
 --- !u!212 &212721263635356002
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -174,7 +193,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300002, guid: 34f8d195b7e63ab47a20acc4b86a3ed2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

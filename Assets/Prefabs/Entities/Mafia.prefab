@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4722780797160746}
   - component: {fileID: 212818647857510226}
+  - component: {fileID: 95703129621984724}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064431983624948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: -2.56, y: -0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4722780797160746}
@@ -68,7 +69,7 @@ Transform:
   m_GameObject: {fileID: 1987287067289308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7928996, y: 5.7928996, z: 5.7928996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4208273694886950}
   m_RootOrder: 0
@@ -108,6 +109,24 @@ CircleCollider2D:
   m_Offset: {x: 0.022785783, y: 0}
   serializedVersion: 2
   m_Radius: 0.48555148
+--- !u!95 &95703129621984724
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987287067289308}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87ac49a197cf6ca4da027ca9cb31c030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114586212762144700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,17 +138,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c034bbdc4cbb304d816e7b982f708cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDieing: 0
+  IsBleedingToDeath: 0
   MovementSpeed: 250
   MinMovementTime: 1
   MaxMovementTime: 3
-  DeathTimer: 10
   EmotionalState: 0
   State: 0
   soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
+  Hitpoints: 100
+  _target: {fileID: 0}
   Weapon: {fileID: 114747927625016684, guid: f250f2f66472c0d41a6065f559006d4d, type: 2}
-  EmotionalSwingChance: 0.25
+  EmotionalSwingChance: 1
   EmtionalSwingTimer: 5
+  TargetingTimer: 1
+  ContinueMurderingChance: 0.33
+  ChaseTargetChance: 0.9
 --- !u!114 &114777719512342430
 MonoBehaviour:
   m_ObjectHideFlags: 1

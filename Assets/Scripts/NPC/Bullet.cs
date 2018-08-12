@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
+    private float despawnTime = 10;
+    private float currDespawnTime = 0;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var civilian = collision.gameObject.GetComponent<Civilian>();
@@ -17,16 +20,17 @@ public class Bullet : MonoBehaviour {
             GameManager.instance.PlayerReset();
         }
 
-        Destroy(gameObject);
+        SimplePool.Despawn(gameObject);
     }
-
-    // Use this for initialization
-    void Start () {
-        Destroy(gameObject, 10);
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        currDespawnTime += Time.deltaTime;
+
+        if (currDespawnTime >= despawnTime)
+        {
+            SimplePool.Despawn(gameObject);
+        }
+    }
 }
