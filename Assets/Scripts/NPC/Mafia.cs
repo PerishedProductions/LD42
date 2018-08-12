@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mafia : Civilian {
 
-    protected Civilian _target;
+    public Civilian _target;
     public Weapon Weapon;
 
     public float EmotionalSwingChance = 0.25f;
@@ -136,7 +136,7 @@ public class Mafia : Civilian {
                         return;
                     }
 
-                    if (Weapon.IsTargetInRange(_target.transform.position, transform.position))
+                    if (Weapon.IsTargetInRange(_target.transform.position, transform.position) && false)
                     {
                         var direction = _target.transform.position - transform.position;
                         direction.Normalize();
@@ -183,8 +183,8 @@ public class Mafia : Civilian {
 
     protected void AdjustMovementToTarget()
     {
-        var degrees = Vector2.Angle(transform.position, _target.transform.position);
+        var degrees = _target.transform.position - transform.position;
 
-        _moveDirection = DegreeToVector2(degrees);
+        _moveDirection = degrees.normalized;
     }
 }
