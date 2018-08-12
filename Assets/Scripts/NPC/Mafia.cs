@@ -170,7 +170,7 @@ public class Mafia : Civilian {
 
     public override void TargetedBy(Civilian shooter)
     {
-        if (_target == null || _target != shooter)
+        if (_target != shooter)
         {
             _target = shooter;
 
