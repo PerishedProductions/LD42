@@ -163,8 +163,8 @@ public class Cop : Civilian {
 
     protected void AdjustMovementToTarget()
     {
-        var degrees = Vector2.Angle(transform.position, _target.transform.position);
+        var direction = _target.transform.position - transform.position;
 
-        _moveDirection = DegreeToVector2(degrees);
+        _moveDirection = direction.normalized;
     }
 }

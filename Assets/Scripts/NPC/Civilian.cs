@@ -197,21 +197,11 @@ public class Civilian : MonoBehaviour {
         StopAllCoroutines();
     }
 
-    public Vector2 RadianToVector2(float radian)
-    {
-        return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
-    }
-
-    public Vector2 DegreeToVector2(float degree)
-    {
-        return RadianToVector2(degree * Mathf.Deg2Rad);
-    }
-
     protected void PickRandomMovementDirection()
     {
-        var degrees = Vector2.Angle(transform.position, new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+        var direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
 
-        _moveDirection = DegreeToVector2(degrees);
+        _moveDirection = direction.normalized;
     }
 
     protected void MoveToDirection()
