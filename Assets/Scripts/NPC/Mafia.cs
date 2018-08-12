@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Mafia : Civilian {
@@ -75,9 +76,11 @@ public class Mafia : Civilian {
                 {
                     StopMoving();
 
-                    var targets = Physics2D.OverlapCircleAll(_rigidBody.position, Weapon.Range);
+                    var targets = Physics2D.OverlapCircleAll(_rigidBody.position, Weapon.Range).ToList();
 
-                    var targetIndex = Random.Range(0, targets.Length);
+                    targets.RemoveAll(t => t.gameObject.GetComponentInChildren<Civilian>() is Mafia);
+
+                    var targetIndex = Random.Range(0, targets.Count);
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
@@ -90,7 +93,7 @@ public class Mafia : Civilian {
                     {
                         _waitedFor += Time.deltaTime;
 
-                        if (_waitedFor > _waitingTime)
+                        if (_waitedFor > TargetingTimer)
                         {
                             _moveDirection = Vector2.zero;
                             EmotionalState = NpcEmotion.Idle;
