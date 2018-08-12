@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour {
     protected int _ammoLeft = 1;
     protected float _currentReloadtime = 0;
     protected float _cdTime = 0;
+    public float Accuracy = 95f;
 
     public WeaponStates WeaponState = WeaponStates.IsReadyToShoot;
 
@@ -95,7 +96,12 @@ public class Weapon : MonoBehaviour {
             var newBullet = Instantiate(BulletPrefab, position, transform.rotation);
             var bulletBody = newBullet.GetComponent<Rigidbody2D>();
 
-            bulletBody.velocity = direction * BulletSpeed;
+            if (Accuracy > 100) Accuracy = 100;
+            float acc = (100 - Accuracy) / 1000;
+
+            Vector3 roughDirection = new Vector3(Random.Range(direction.x - acc, direction.x + acc), Random.Range(direction.y - acc, direction.y + acc));
+            roughDirection.Normalize();
+            bulletBody.velocity = roughDirection * BulletSpeed;
 
             _ammoLeft--;
 

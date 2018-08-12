@@ -93,13 +93,6 @@ public class Civilian : MonoBehaviour {
                 {
                     StopMoving();
 
-                    if (_moveDirection != Vector2.zero)
-                    {
-                        _moveDirection = Vector2.zero;
-                        _waitedFor = 0;
-                        _waitingTime = -1;
-                    }
-
                     if(_waitingTime < 0)
                     {
                         _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
@@ -112,6 +105,7 @@ public class Civilian : MonoBehaviour {
                         State = NpcPhysicalState.Moving;
 
                         _waitedFor = 0;
+                        _waitingTime = -1;
                     }
 
                     break;
@@ -134,6 +128,8 @@ public class Civilian : MonoBehaviour {
                     {
                         StopMoving();
 
+                        _waitedFor = 0;
+                        _waitingTime = -1;
                         State = NpcPhysicalState.Waiting;
                     }
 

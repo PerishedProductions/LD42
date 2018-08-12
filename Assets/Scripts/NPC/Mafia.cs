@@ -104,6 +104,8 @@ public class Mafia : Civilian {
                 }
             case NpcPhysicalState.Attacking:
                 {
+                    StopMoving();
+
                     if (Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
                     {
                         Weapon.Reload();
