@@ -40,6 +40,8 @@ public class Civilian : MonoBehaviour {
 
     public float Hitpoints = 100;
 
+    private Animator anim;
+
     public virtual void DoDmg()
     {
         Hitpoints -= 25;
@@ -62,13 +64,18 @@ public class Civilian : MonoBehaviour {
     protected virtual void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
 
     protected virtual void FixedUpdate()
     {
-        if(IsBleedingToDeath)
+
+        anim.SetFloat("Horizontal", _rigidBody.velocity.x);
+        anim.SetFloat("Vertical", _rigidBody.velocity.y);
+
+        if (IsBleedingToDeath)
         {
             BleedDmg();
         }

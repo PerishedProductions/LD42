@@ -93,7 +93,7 @@ public class Weapon : MonoBehaviour {
     {
         if(WeaponState == WeaponStates.IsReadyToShoot)
         {
-            var newBullet = Instantiate(BulletPrefab, position, transform.rotation);
+            var newBullet = SimplePool.Spawn(BulletPrefab, position, transform.rotation);
             var bulletBody = newBullet.GetComponent<Rigidbody2D>();
 
             if (Accuracy > 100) Accuracy = 100;

@@ -381,6 +381,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 95488510953513330, guid: 776b47374cadca44b8836f23919e08a0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776b47374cadca44b8836f23919e08a0, type: 2}
   m_IsPrefabAsset: 0
@@ -447,6 +452,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361003586963466, guid: 82a6d4d373eda9947ab2ef344fc37b8d,
     type: 2}
   m_PrefabInternal: {fileID: 309387816}
+--- !u!1 &332536946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332536948}
+  - component: {fileID: 332536947}
+  m_Layer: 0
+  m_Name: CivSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332536947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332536946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  SpawnInterval: 0
+  MaxSpawnsAlife: 10
+--- !u!4 &332536948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332536946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8, y: -33.3, z: -0.6117827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341316360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1523,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 95790720586144858, guid: 52b70b94e344c114a8e12c647144ef1b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b70b94e344c114a8e12c647144ef1b, type: 2}
   m_IsPrefabAsset: 0
@@ -2002,7 +2056,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006934408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.88, y: -13.57, z: -0.6117827}
+  m_LocalPosition: {x: -33.6, y: -56.8, z: -0.6117827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2551,14 +2605,58 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114586212762144700, guid: 0e03faa232718b54cb23aea38046c649,
+    - target: {fileID: 95703129621984724, guid: 0e03faa232718b54cb23aea38046c649,
         type: 2}
-      propertyPath: EmotionalSwingChance
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e03faa232718b54cb23aea38046c649, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1210522458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210522460}
+  - component: {fileID: 1210522459}
+  m_Layer: 0
+  m_Name: CivSpawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1210522459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210522458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  SpawnInterval: 0
+  MaxSpawnsAlife: 10
+--- !u!4 &1210522460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210522458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.6, y: 27.2, z: -0.6117827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1311824104
 Prefab:
   m_ObjectHideFlags: 0
@@ -2622,6 +2720,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4361003586963466, guid: 82a6d4d373eda9947ab2ef344fc37b8d,
     type: 2}
   m_PrefabInternal: {fileID: 1311824104}
+--- !u!1 &1350421066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350421068}
+  - component: {fileID: 1350421067}
+  m_Layer: 0
+  m_Name: CivSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1350421067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350421066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  SpawnInterval: 0
+  MaxSpawnsAlife: 10
+--- !u!4 &1350421068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350421066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -26.35, y: -2.34, z: -0.6117827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374797287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,6 +3719,7 @@ GameObject:
   - component: {fileID: 1628259862}
   - component: {fileID: 1628259864}
   - component: {fileID: 1628259863}
+  - component: {fileID: 1628259865}
   m_Layer: 0
   m_Name: HP
   m_TagString: Untagged
@@ -3638,6 +3781,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1628259861}
   m_CullTransparentMesh: 0
+--- !u!95 &1628259865
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1628259861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7104a16de0aaf448a024bac79559b12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1682279791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,6 +3954,50 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1682279791}
   m_CullTransparentMesh: 0
+--- !u!1 &1692016045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692016047}
+  - component: {fileID: 1692016046}
+  m_Layer: 0
+  m_Name: PoliceSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1692016046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692016045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114586465574786244, guid: 776b47374cadca44b8836f23919e08a0,
+    type: 2}
+  SpawnInterval: 0
+  MaxSpawnsAlife: 10
+--- !u!4 &1692016047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692016045}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -3, z: -0.6117827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710766824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,6 +4099,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1783004618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783004620}
+  - component: {fileID: 1783004619}
+  m_Layer: 0
+  m_Name: CivSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1783004619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1783004618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  SpawnInterval: 0
+  MaxSpawnsAlife: 10
+--- !u!4 &1783004620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1783004618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.9, y: -4.3, z: -0.6117827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883817834
 GameObject:
   m_ObjectHideFlags: 0
