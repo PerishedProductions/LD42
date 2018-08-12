@@ -59,6 +59,7 @@ public class Ghost : Enemy {
         if (collision.gameObject.tag == "Player")
         {
             GameManager.instance.HurtPlayer();
+            GameManager.instance.souls -= Random.Range(0, 3);
         }
     }
 

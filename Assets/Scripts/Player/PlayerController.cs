@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour {
             attack = true;
             canAttack = false;
             anim.SetBool("Attack", true);
+            GameManager.instance.PlaySound(GameManager.Sounds.Swing);
         }
 
         if (movement.x < 0)
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour {
         if (collision.tag == "Enemy")
         {
             GameManager.instance.AddSoul();
+            GameManager.instance.PlaySound(GameManager.Sounds.Slurp);
             Destroy(collision.gameObject);
         }
 

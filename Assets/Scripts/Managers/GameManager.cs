@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
 
     public enum GameState { Win, Loose, Playing }
 
+    public enum Sounds { Slurp, Swing }
+
     public static GameManager instance = null;
 
     public int souls = 0;
@@ -25,6 +27,9 @@ public class GameManager : MonoBehaviour {
     public int ghostCap = 10;
 
     public GameState gameState = GameState.Playing;
+
+    public AudioSource slurp;
+    public AudioSource swing;
 
     private void Awake()
     {
@@ -140,6 +145,19 @@ public class GameManager : MonoBehaviour {
                 break;
         }
 
+    }
+
+    public void PlaySound(Sounds sound)
+    {
+        switch (sound)
+        {
+            case Sounds.Slurp:
+                slurp.Play();
+                break;
+            case Sounds.Swing:
+                swing.Play();
+                break;
+        }
     }
 
 }
