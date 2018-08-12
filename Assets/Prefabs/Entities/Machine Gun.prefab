@@ -56,6 +56,7 @@ MonoBehaviour:
   Reloadtime: 10
   MagazineSize: 20
   Range: 10
-  ShootingSpeed: 1
+  ShootingSpeed: 0.5
   BulletSpeed: 10
-  WeaponState: 2
+  Accuracy: 95
+  WeaponState: 1

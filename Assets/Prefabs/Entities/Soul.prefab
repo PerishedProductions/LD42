@@ -141,7 +141,7 @@ MonoBehaviour:
   moveSpeed: 300
   viewRange: 5
   rb: {fileID: 0}
-  lifeTime: 5
+  lifeTime: 35
   currLifeTime: 0
   ghostPrefab: {fileID: 1808531288868614, guid: 54f094454de94314bad57d0e99227bb4,
     type: 2}

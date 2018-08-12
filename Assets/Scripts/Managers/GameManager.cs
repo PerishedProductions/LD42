@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public enum GameState { Win, Loose, Playing }
+
     public static GameManager instance = null;
 
     public int souls = 0;
@@ -20,6 +22,9 @@ public class GameManager : MonoBehaviour {
     public bool playerDead = false;
 
     public int amountOfGhosts = 0;
+    public int ghostCap = 10;
+
+    public GameState gameState = GameState.Playing;
 
     private void Awake()
     {
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour {
 
         if (timeLeft <= 0)
         {
-            Debug.Log("Times up");            
+            ChangeGameState(GameState.Win);   
         }
 
         if (playerDead)
@@ -64,13 +69,18 @@ public class GameManager : MonoBehaviour {
                 player.SetActive(true);
                 playerDead = false;
                 playerController.health = 100;
-                currentPlayerCooldown = 0;
+                currentPlayerCooldown = playerCooldown;
                 player.transform.position = playerSpawn.position;
             }
 
         }
 
-        amountOfGhosts = GetComponents<Ghost>().Length;
+        amountOfGhosts = FindObjectsOfType<Ghost>().Length;
+
+        if (amountOfGhosts >= 10)
+        {
+            ChangeGameState(GameState.Loose);
+        }
 
         if (playerController.health <= 0)
         {
@@ -103,6 +113,23 @@ public class GameManager : MonoBehaviour {
         int hurtPercent = UnityEngine.Random.Range(0, 50);
 
         playerController.health -= hurtPercent;
+
+    }
+
+    public void ChangeGameState(GameState type)
+    {
+
+        gameState = type;
+
+        switch (gameState)
+        {
+            case GameState.Win:
+                Time.timeScale = 0;
+                break;
+            case GameState.Loose:
+                Time.timeScale = 0;
+                break;
+        }
 
     }
 

@@ -12,8 +12,14 @@ public class UIManager : MonoBehaviour {
     public TextMeshProUGUI respawnText;
     public GameObject deadPanel;
 
+    public TextMeshProUGUI ghostCount;
+
     public RectTransform hpMask;
     float hpMaskLengthPercent;
+
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI gameOverScore;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +30,7 @@ public class UIManager : MonoBehaviour {
 	void Update () {
         soulText.text = "Souls: " + GameManager.instance.souls;
         timeText.text = GameManager.instance.GetTimeLeft();
+        ghostCount.text = "Ghosts: " + GameManager.instance.amountOfGhosts;
 
         if (GameManager.instance.playerDead)
         {
@@ -46,5 +53,21 @@ public class UIManager : MonoBehaviour {
             hpMask.sizeDelta = new Vector2(0, hpMask.sizeDelta.y);
         }
 
-	}
+        if (GameManager.instance.gameState == GameManager.GameState.Win)
+        {
+            gameOverPanel.SetActive(true);
+            gameOverScore.gameObject.SetActive(true);
+            gameOverText.text = "Game Over";
+            gameOverScore.text = "Souls Collected: " + GameManager.instance.souls + "\n " +
+                "Ghosts Present: " + GameManager.instance.amountOfGhosts + "\n" +
+                "Score Sum: " + (GameManager.instance.souls - GameManager.instance.amountOfGhosts);
+        }
+
+        if (GameManager.instance.gameState == GameManager.GameState.Loose)
+        {
+            gameOverPanel.SetActive(true);
+            gameOverText.text = "You lost!";
+        }
+
+    }
 }

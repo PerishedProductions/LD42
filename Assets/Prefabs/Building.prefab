@@ -44,6 +44,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1719892446379258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4239230073595858}
+  - component: {fileID: 114405214093229894}
+  m_Layer: 0
+  m_Name: CivSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4232487979430516
 Transform:
   m_ObjectHideFlags: 1
@@ -57,6 +73,19 @@ Transform:
   m_Father: {fileID: 4361003586963466}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4239230073595858
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719892446379258}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2521306, y: 17.778944, z: -0.40106383}
+  m_LocalScale: {x: 0.6555658, y: 0.6555658, z: 0.6555658}
+  m_Children: []
+  m_Father: {fileID: 4361003586963466}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4361003586963466
 Transform:
   m_ObjectHideFlags: 1
@@ -64,10 +93,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476275477572838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.499798, y: 5.46, z: 0}
-  m_LocalScale: {x: 1.5254, y: 1.5254, z: 1.5254}
+  m_LocalPosition: {x: -13.42, y: -28.4, z: 0}
+  m_LocalScale: {x: 1.5253999, y: 1.5253999, z: 1.5253999}
   m_Children:
   - {fileID: 4232487979430516}
+  - {fileID: 4239230073595858}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,6 +138,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   update: 0
+--- !u!114 &114405214093229894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719892446379258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f11e6a23fb054eaa1ee0f4bef3700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
+    type: 2}
+  SpawnInterval: 5
+  MaxSpawnsAlife: 10
 --- !u!212 &212845954300280080
 SpriteRenderer:
   m_ObjectHideFlags: 1
