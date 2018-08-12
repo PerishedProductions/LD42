@@ -6,6 +6,9 @@ public class Cop : Civilian {
 
     protected Civilian _target;
     public Weapon Weapon;
+    public float TargetingTimer = 1f;
+    public float ContinueMurderingChance = 0.33f;
+    public float ChaseTargetChance = 0.9f;
 
     protected override void Start()
     {
@@ -30,28 +33,60 @@ public class Cop : Civilian {
     {
         switch (State)
         {
-            case NpcPhysicalState.Waiting:
-                break;
             case NpcPhysicalState.Moving:
+                {
+                    if (_moveDirection == Vector2.zero)
+                    {
+                        AdjustMovementToTarget();
+                        _waitedFor = 0;
+                        _waitingTime = Random.Range(0.1f, 1f);
+                    }
+
+                    MoveToDirection();
+
+                    _waitedFor += Time.deltaTime;
+
+                    if (_waitedFor > _waitingTime)
+                    {
+                        StopMoving();
+                        State = NpcPhysicalState.Attacking;
+                    }
+                }
                 break;
             case NpcPhysicalState.Targeting:
                 {
+                    StopMoving();
+
                     var targets = Physics2D.OverlapCircleAll(_rigidBody.position, Weapon.Range);
 
                     var targetIndex = Random.Range(0, targets.Length);
 
                     _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
 
-                    if(_target != null && _target != this)
+                    if (_target != null && _target != this)
                     {
+                        _moveDirection = Vector2.zero;
                         State = NpcPhysicalState.Attacking;
+                    }
+                    else
+                    {
+                        _waitedFor += Time.deltaTime;
+
+                        if (_waitedFor > _waitingTime)
+                        {
+                            _moveDirection = Vector2.zero;
+                            EmotionalState = NpcEmotion.Idle;
+                            State = NpcPhysicalState.Waiting;
+
+                            _waitedFor = 0;
+                        }
                     }
 
                     break;
                 }
             case NpcPhysicalState.Attacking:
                 {
-                    if(Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
+                    if (Weapon.WeaponState == Weapon.WeaponStates.NeedsReloading)
                     {
                         Weapon.Reload();
                         return;
@@ -59,25 +94,24 @@ public class Cop : Civilian {
 
                     if (Weapon.WeaponState == Weapon.WeaponStates.IsReloading || Weapon.WeaponState == Weapon.WeaponStates.IsInCoolDown)
                     {
-                        if (_waitingTime < 0)
+                        if (Weapon.WeaponState != Weapon.WeaponStates.IsReadyToShoot)
                         {
-                            _waitingTime = Random.Range(MinWaitTime, MaxWaitTime);
+                            return;
                         }
-
-                        _waitedFor += Time.deltaTime;
-
-                        if (_waitedFor > _waitingTime)
-                        {
-                            _waitedFor = 0;
-                            _waitingTime = -1;
-                        }
-                        return;
                     }
 
                     if (_target == null || _target.transform == null || (_target != null && _target.IsDieing))
                     {
-                        EmotionalState = NpcEmotion.Idle;
-                        State = NpcPhysicalState.Waiting;
+                        if (Random.value < ContinueMurderingChance)
+                        {
+                            State = NpcPhysicalState.Targeting;
+                        }
+                        else
+                        {
+                            EmotionalState = NpcEmotion.Idle;
+                            State = NpcPhysicalState.Waiting;
+                        }
+
                         _target = null;
                         return;
                     }
@@ -94,16 +128,24 @@ public class Cop : Civilian {
                     else
                     {
                         //Move closer to target or chance to give up on target and move on
+                        if (Random.value < ChaseTargetChance)
+                        {
+                            State = NpcPhysicalState.Moving;
+                            return;
+                        }
+
                         EmotionalState = NpcEmotion.Idle;
                         State = NpcPhysicalState.Waiting;
                         _target = null;
+
                     }
 
                     break;
                 }
+            case NpcPhysicalState.Waiting:
             case NpcPhysicalState.Defending:
-                break;
             default:
+                State = NpcPhysicalState.Targeting;
                 break;
         }
     }
@@ -117,5 +159,12 @@ public class Cop : Civilian {
             EmotionalState = NpcEmotion.Aggresive;
             State = NpcPhysicalState.Attacking;
         }
+    }
+
+    protected void AdjustMovementToTarget()
+    {
+        var degrees = Vector2.Angle(transform.position, _target.transform.position);
+
+        _moveDirection = DegreeToVector2(degrees);
     }
 }

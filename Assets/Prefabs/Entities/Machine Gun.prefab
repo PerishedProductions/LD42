@@ -55,7 +55,7 @@ MonoBehaviour:
     type: 2}
   Reloadtime: 10
   MagazineSize: 20
-  Range: 25
+  Range: 10
   ShootingSpeed: 1
   BulletSpeed: 10
   WeaponState: 2

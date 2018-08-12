@@ -128,6 +128,9 @@ MonoBehaviour:
   State: 0
   soulPrefab: {fileID: 1808531288868614, guid: d626984c30ec1a449805de452c3b8bbf, type: 2}
   Weapon: {fileID: 114854503334880936, guid: deeac0753b5b7064a88cfbc5d4ec0420, type: 2}
+  TargetingTimer: 0
+  ContinueMurderingChance: 0.1
+  ChaseTargetChance: 0.75
 --- !u!114 &114999089402747062
 MonoBehaviour:
   m_ObjectHideFlags: 1
