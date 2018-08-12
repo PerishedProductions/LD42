@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour {
 
 		Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        rb.velocity = movement * movementSpeed * Time.deltaTime;
+        rb.velocity = movement.normalized * movementSpeed * Time.deltaTime;
 
     }
 
