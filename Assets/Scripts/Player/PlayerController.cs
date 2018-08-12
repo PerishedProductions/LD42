@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
         {
             attack = true;
             canAttack = false;
+            anim.SetBool("Attack", true);
         }
 
         if (movement.x < 0)
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour {
         else
         {
             hitbox.enabled = false;
+            anim.SetBool("Attack", false);
         }
 
     }

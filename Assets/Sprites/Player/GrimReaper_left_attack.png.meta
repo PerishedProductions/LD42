@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 15cd4bfb4305e804a8fac3c1934e5f5b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: GrimReaper_left_attack_0
+    21300002: GrimReaper_left_attack_1
+    21300004: GrimReaper_left_attack_2
+    21300006: GrimReaper_left_attack_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +73,100 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GrimReaper_left_attack_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 16
+        width: 177
+        height: 132
+      alignment: 9
+      pivot: {x: 0.24979293, y: 0.49733728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2034d945f9700740ac5b13826ef6af5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrimReaper_left_attack_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 24
+        width: 173
+        height: 128
+      alignment: 9
+      pivot: {x: 0.68285143, y: 0.49313515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37e28bcb5df375429a5b31e7878eb4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrimReaper_left_attack_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 23
+        width: 181
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d80ca59079ed144ab8766b59986eac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrimReaper_left_attack_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 18
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.6262996, y: 0.50274605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94fcf07d14ebf214badc06e09c7b68b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
