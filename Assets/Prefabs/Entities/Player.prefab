@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 500
   attackTime: 0.3
+  health: 100
   hitbox: {fileID: 58096744188000392}
   hitboxPos:
   - {x: -0.7, y: -0.14}

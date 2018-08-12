@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 6e4970ce5547e544594e55c5706c8f48
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: GrimReaper_up_attack_0
+    21300002: GrimReaper_up_attack_1
+    21300004: GrimReaper_up_attack_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +72,80 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GrimReaper_up_attack_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 23
+        width: 180
+        height: 113
+      alignment: 9
+      pivot: {x: 0.1789343, y: 0.5540939}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fcd6eacd5386c4b84cbee294111fc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrimReaper_up_attack_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 23
+        width: 150
+        height: 113
+      alignment: 9
+      pivot: {x: 0.32403138, y: 0.55901146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4910b3bdb4365964f945fdd2567cec73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrimReaper_up_attack_2
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 26
+        width: 139
+        height: 113
+      alignment: 9
+      pivot: {x: 0.7578564, y: 0.5393409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81c4588a20e8b64e9741f8b1cfb9222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
