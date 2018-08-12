@@ -69,6 +69,15 @@ public class GameManager : MonoBehaviour {
                 player.SetActive(true);
                 playerDead = false;
                 playerController.health = 100;
+
+
+                int dmg = UnityEngine.Random.Range(0, 4);
+
+                if (souls > dmg)
+                {
+                    souls -= dmg;
+                }
+                
                 currentPlayerCooldown = playerCooldown;
                 player.transform.position = playerSpawn.position;
             }

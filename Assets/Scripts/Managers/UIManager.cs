@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour {
             gameOverPanel.SetActive(true);
             gameOverScore.gameObject.SetActive(true);
             gameOverText.text = "Game Over";
-            gameOverScore.text = "Souls Collected: " + GameManager.instance.souls + "\n " +
+            gameOverScore.text = "Souls Harvested: " + GameManager.instance.souls + "\n " +
                 "Ghosts Present: " + GameManager.instance.amountOfGhosts + "\n" +
                 "Score Sum: " + (GameManager.instance.souls - GameManager.instance.amountOfGhosts);
         }
@@ -66,7 +66,9 @@ public class UIManager : MonoBehaviour {
         if (GameManager.instance.gameState == GameManager.GameState.Loose)
         {
             gameOverPanel.SetActive(true);
+            gameOverScore.gameObject.SetActive(true);
             gameOverText.text = "You lost!";
+            gameOverScore.text = "The Gods are displeased with your job! \n You have been demoted to do paperwork!!";
         }
 
     }
