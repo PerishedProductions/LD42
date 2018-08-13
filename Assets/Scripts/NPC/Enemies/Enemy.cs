@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour {
         {
             var direction = target.transform.position - transform.position;
 
-            if (direction.magnitude < 3)
+            if (direction.magnitude < 4)
             {
                 rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * (moveSpeed / 2) * Time.deltaTime;
             }

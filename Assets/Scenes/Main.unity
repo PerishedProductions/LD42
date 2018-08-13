@@ -1299,8 +1299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &332536948
 Transform:
   m_ObjectHideFlags: 0
@@ -4294,8 +4294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114586212762144700, guid: 0e03faa232718b54cb23aea38046c649,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &1006934410
 Transform:
   m_ObjectHideFlags: 0
@@ -5409,8 +5409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &1210522460
 Transform:
   m_ObjectHideFlags: 0
@@ -5891,8 +5891,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &1350421068
 Transform:
   m_ObjectHideFlags: 0
@@ -8567,8 +8567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114586465574786244, guid: 776b47374cadca44b8836f23919e08a0,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &1692016047
 Transform:
   m_ObjectHideFlags: 0
@@ -9087,8 +9087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnedCiv: {fileID: 114897651428752928, guid: 52b70b94e344c114a8e12c647144ef1b,
     type: 2}
-  SpawnInterval: 0
-  MaxSpawnsAlife: 10
+  SpawnInterval: 1
+  MaxSpawnsAlife: 20
 --- !u!4 &1783004620
 Transform:
   m_ObjectHideFlags: 0
