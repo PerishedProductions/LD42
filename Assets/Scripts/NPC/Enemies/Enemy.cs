@@ -90,7 +90,17 @@ public class Enemy : MonoBehaviour {
         if (target != null)
         {
             var direction = target.transform.position - transform.position;
-            rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * moveSpeed * Time.deltaTime;
+
+            if (direction.magnitude < 3)
+            {
+                rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * (moveSpeed / 2) * Time.deltaTime;
+            }
+            else
+            {
+                rb.velocity = -Vector2.Lerp(Vector2.zero, direction, 0.5f) * moveSpeed * Time.deltaTime;
+            }
+
+           
         }
         else
         {
