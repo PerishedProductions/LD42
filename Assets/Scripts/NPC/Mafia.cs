@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -82,7 +82,10 @@ public class Mafia : Civilian {
 
                     var targetIndex = Random.Range(0, targets.Count);
 
-                    _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
+                    if (targets.Count != 0)
+                        _target = targets[targetIndex].gameObject.GetComponentInChildren<Civilian>();
+                    
+                    
 
                     if (_target != null && _target != this && !(_target is Mafia))
                     {
